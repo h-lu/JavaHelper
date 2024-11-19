@@ -129,7 +129,22 @@ CREATE TABLE students (
 **AI提示词：**
 ```
 基于以下MySQL表结构,请帮我创建对应的Student实体类:
-[把建表语句贴在这里]
+
+CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    age INT,
+    gender ENUM('男','女') NOT NULL,
+    major VARCHAR(50),
+    grade VARCHAR(20),
+    admission_date DATE,
+    email VARCHAR(100),
+    phone VARCHAR(20),
+    address TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
 需要:
 - 包含所有字段的属性
 - getter和setter方法
